@@ -14,6 +14,9 @@
 		E0B2DD1B2BA47AB50086610E /* SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD1A2BA47AB50086610E /* SampleTests.swift */; };
 		E0B2DD252BA47AB50086610E /* SampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD242BA47AB50086610E /* SampleUITests.swift */; };
 		E0B2DD272BA47AB50086610E /* SampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD262BA47AB50086610E /* SampleUITestsLaunchTests.swift */; };
+		E0B2DD342BA47B250086610E /* RestaurantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD332BA47B250086610E /* RestaurantCardView.swift */; };
+		E0B2DD362BA483D40086610E /* RoundedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD352BA483D40086610E /* RoundedCardView.swift */; };
+		E0B2DD3B2BA492EC0086610E /* DetailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD3A2BA492EC0086610E /* DetailCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		E0B2DD202BA47AB50086610E /* SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B2DD242BA47AB50086610E /* SampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUITests.swift; sourceTree = "<group>"; };
 		E0B2DD262BA47AB50086610E /* SampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E0B2DD332BA47B250086610E /* RestaurantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardView.swift; sourceTree = "<group>"; };
+		E0B2DD352BA483D40086610E /* RoundedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCardView.swift; sourceTree = "<group>"; };
+		E0B2DD3A2BA492EC0086610E /* DetailCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,8 @@
 		E0B2DD072BA47AB40086610E /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				E0B2DD3C2BA4957D0086610E /* Models */,
+				E0B2DD392BA48E990086610E /* Views */,
 				E0B2DD082BA47AB40086610E /* SampleApp.swift */,
 				E0B2DD0A2BA47AB40086610E /* ContentView.swift */,
 				E0B2DD0C2BA47AB50086610E /* Assets.xcassets */,
@@ -127,6 +135,23 @@
 				E0B2DD262BA47AB50086610E /* SampleUITestsLaunchTests.swift */,
 			);
 			path = SampleUITests;
+			sourceTree = "<group>";
+		};
+		E0B2DD392BA48E990086610E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2DD352BA483D40086610E /* RoundedCardView.swift */,
+				E0B2DD332BA47B250086610E /* RestaurantCardView.swift */,
+				E0B2DD3A2BA492EC0086610E /* DetailCardView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E0B2DD3C2BA4957D0086610E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B2DD342BA47B250086610E /* RestaurantCardView.swift in Sources */,
 				E0B2DD0B2BA47AB40086610E /* ContentView.swift in Sources */,
+				E0B2DD362BA483D40086610E /* RoundedCardView.swift in Sources */,
+				E0B2DD3B2BA492EC0086610E /* DetailCardView.swift in Sources */,
 				E0B2DD092BA47AB40086610E /* SampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

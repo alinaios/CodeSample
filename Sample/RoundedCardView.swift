@@ -30,7 +30,7 @@ struct RoundedCardView<Content: View>: View {
      }
  }
 
- struct RoundedRectangleWrapper_Previews: PreviewProvider {
+ struct RoundedCardView_Previews: PreviewProvider {
      static var previews: some View {
          RoundedCardView {
              Text("Glasses")

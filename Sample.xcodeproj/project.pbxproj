@@ -20,10 +20,13 @@
 		E0B2DD3E2BA499110086610E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD3D2BA499110086610E /* Restaurant.swift */; };
 		E0B2DD402BA499A00086610E /* RestaurantsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD3F2BA499A00086610E /* RestaurantsResponse.swift */; };
 		E0B2DD422BA499E80086610E /* OpenStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD412BA499E80086610E /* OpenStatus.swift */; };
-		E0B2DD442BA49AA50086610E /* BackendError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD432BA49AA50086610E /* BackendError.swift */; };
+		E0B2DD442BA49AA50086610E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD432BA49AA50086610E /* APIError.swift */; };
 		E0B2DD472BA49C510086610E /* DataFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD462BA49C510086610E /* DataFetchManager.swift */; };
 		E0B2DD492BA49C7A0086610E /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD482BA49C7A0086610E /* Routing.swift */; };
 		E0B2DD4B2BA49D3D0086610E /* NetworkDataFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD4A2BA49D3D0086610E /* NetworkDataFetchManager.swift */; };
+		E0B2DD4D2BA4A5F20086610E /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD4C2BA4A5F20086610E /* RestaurantListView.swift */; };
+		E0B2DD502BA6DB520086610E /* RoutingParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD4F2BA6DB520086610E /* RoutingParameter.swift */; };
+		E0B2DD522BA6DBA70086610E /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD512BA6DBA70086610E /* CompositionRoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +64,13 @@
 		E0B2DD3D2BA499110086610E /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E0B2DD3F2BA499A00086610E /* RestaurantsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsResponse.swift; sourceTree = "<group>"; };
 		E0B2DD412BA499E80086610E /* OpenStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenStatus.swift; sourceTree = "<group>"; };
-		E0B2DD432BA49AA50086610E /* BackendError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendError.swift; sourceTree = "<group>"; };
+		E0B2DD432BA49AA50086610E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E0B2DD462BA49C510086610E /* DataFetchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchManager.swift; sourceTree = "<group>"; };
 		E0B2DD482BA49C7A0086610E /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 		E0B2DD4A2BA49D3D0086610E /* NetworkDataFetchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetchManager.swift; sourceTree = "<group>"; };
+		E0B2DD4C2BA4A5F20086610E /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
+		E0B2DD4F2BA6DB520086610E /* RoutingParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingParameter.swift; sourceTree = "<group>"; };
+		E0B2DD512BA6DBA70086610E /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 		E0B2DD072BA47AB40086610E /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				E0B2DD512BA6DBA70086610E /* CompositionRoot.swift */,
 				E0B2DD452BA49BE20086610E /* Networking */,
 				E0B2DD3C2BA4957D0086610E /* Models */,
 				E0B2DD392BA48E990086610E /* Views */,
@@ -156,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E0B2DD352BA483D40086610E /* RoundedCardView.swift */,
+				E0B2DD4C2BA4A5F20086610E /* RestaurantListView.swift */,
 				E0B2DD332BA47B250086610E /* RestaurantCardView.swift */,
 				E0B2DD3A2BA492EC0086610E /* DetailCardView.swift */,
 			);
@@ -168,7 +176,7 @@
 				E0B2DD3D2BA499110086610E /* Restaurant.swift */,
 				E0B2DD3F2BA499A00086610E /* RestaurantsResponse.swift */,
 				E0B2DD412BA499E80086610E /* OpenStatus.swift */,
-				E0B2DD432BA49AA50086610E /* BackendError.swift */,
+				E0B2DD432BA49AA50086610E /* APIError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,11 +184,20 @@
 		E0B2DD452BA49BE20086610E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E0B2DD4E2BA6DB220086610E /* RestaurantService */,
 				E0B2DD462BA49C510086610E /* DataFetchManager.swift */,
-				E0B2DD482BA49C7A0086610E /* Routing.swift */,
 				E0B2DD4A2BA49D3D0086610E /* NetworkDataFetchManager.swift */,
+				E0B2DD482BA49C7A0086610E /* Routing.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		E0B2DD4E2BA6DB220086610E /* RestaurantService */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2DD4F2BA6DB520086610E /* RoutingParameter.swift */,
+			);
+			path = RestaurantService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,11 +337,14 @@
 				E0B2DD472BA49C510086610E /* DataFetchManager.swift in Sources */,
 				E0B2DD492BA49C7A0086610E /* Routing.swift in Sources */,
 				E0B2DD362BA483D40086610E /* RoundedCardView.swift in Sources */,
+				E0B2DD522BA6DBA70086610E /* CompositionRoot.swift in Sources */,
 				E0B2DD3B2BA492EC0086610E /* DetailCardView.swift in Sources */,
 				E0B2DD092BA47AB40086610E /* SampleApp.swift in Sources */,
 				E0B2DD4B2BA49D3D0086610E /* NetworkDataFetchManager.swift in Sources */,
-				E0B2DD442BA49AA50086610E /* BackendError.swift in Sources */,
+				E0B2DD442BA49AA50086610E /* APIError.swift in Sources */,
 				E0B2DD402BA499A00086610E /* RestaurantsResponse.swift in Sources */,
+				E0B2DD502BA6DB520086610E /* RoutingParameter.swift in Sources */,
+				E0B2DD4D2BA4A5F20086610E /* RestaurantListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

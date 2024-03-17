@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BackendError {
+struct APIError {
     let error: Bool
     let reason: String
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 struct RestaurantsResponse {
-    let list: [Restaurant]
+    let restaurants: [Restaurant]
 }

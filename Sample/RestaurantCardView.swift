@@ -26,11 +26,18 @@ struct RestaurantCardView: View {
     private var titleView: some View{
         VStack (alignment: .leading, content: {
             Text(viewModel.name)
+                .font(designSystem.fontguide.title1)
+                .foregroundColor(designSystem.palette.darkText)
             HStack {
                 ForEach (viewModel.filters, id: \.self) { currentTag in
                     Text(currentTag.prefix(3))
+                        .font(designSystem.fontguide.subtitle1)
+                        .foregroundColor(designSystem.palette.subtitle)
+
                     if (currentTag != viewModel.filters.last) {
                         Text("*")
+                            .font(designSystem.fontguide.subtitle1)
+                            .foregroundColor(designSystem.palette.subtitle)
                     }
                 }
             }
@@ -39,6 +46,7 @@ struct RestaurantCardView: View {
                     .frame(width: 8, height: 8)
                     .foregroundColor(.red)
                 Text("\(viewModel.deliveryTime) mins")
+                    .font(designSystem.fontguide.footer1)
            }
         }).padding(8)
     }
@@ -47,6 +55,18 @@ struct RestaurantCardView: View {
         HStack(alignment: .firstTextBaseline, spacing: 3, content: {
             Image(systemName: "star").foregroundColor(.red)
             Text(String(viewModel.rating))
+                .font(designSystem.fontguide.subtitle1)
         })
+    }
+}
+struct RestaurantCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = FeedRestaurant(id: "123",
+                                       name: "Hello pizzza",
+                                       rating: "12",
+                                       filters: ["Top", "best"],
+                                       imageURL: URL(string: "Top")!,
+                                       deliveryTime: "60")
+        RestaurantCardView(viewModel: viewModel)
     }
 }

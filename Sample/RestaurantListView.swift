@@ -55,7 +55,7 @@ struct RestaurantListView: View {
                     Text(String(localized: "no results \(query)", comment: "inquiry not found"))
                     Spacer()
                 }).padding()
-            }.navigationTitle("search").navigationBarTitleDisplayMode(.inline)
+            }
         }
     }
 

@@ -18,17 +18,17 @@ protocol PaletteProtocol {
 }
 
 struct ClassicPalette: PaletteProtocol {
-    var darkText: Color = Color(.darkText)
+    var darkText: Color = Color(.sampleDarkText)
     
-    var lightText: Color = Color(.lightText)
+    var lightText: Color = Color(.sampleLigthText)
     
-    var subtitle: Color = Color(.blue)
+    var subtitle: Color = Color(.sampleSubtitle)
     
-    var background: Color = Color(.gray)
+    var background: Color = Color(.sampleBackground)
     
-    var selected: Color = Color(.yellow)
+    var selected: Color = Color(.sampleSelected)
     
-    var positive: Color = Color(.green)
+    var positive: Color = Color(.samplePositive)
     
-    var negative: Color = Color(.red)
+    var negative: Color = Color(.sampleNegative)
 }

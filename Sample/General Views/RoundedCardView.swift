@@ -25,7 +25,6 @@ struct RoundedCardView<Content: View>: View {
                          y: 4)
                  .overlay(content)
          }
-         .padding(8)
      }
  }
 

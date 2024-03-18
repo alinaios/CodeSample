@@ -8,15 +8,13 @@
 import Foundation
 
 protocol LayoutProtocol {
-    static var small: CGFloat { get }
-    static var medium: CGFloat { get }
-    static var large: CGFloat { get }
+    var small: CGFloat { get }
+    var medium: CGFloat { get }
+    var large: CGFloat { get }
 }
 
 struct ClassicLayout: LayoutProtocol {
-    static var small: CGFloat = 8
-    
-    static var medium: CGFloat = 16
-    
-    static var large: CGFloat = 24
+    var small: CGFloat = 8
+    var medium: CGFloat = 16
+    var large: CGFloat = 24
 }

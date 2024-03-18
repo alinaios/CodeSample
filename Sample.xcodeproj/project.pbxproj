@@ -37,6 +37,7 @@
 		E0B2DD6C2BA8812F0086610E /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD6B2BA8812F0086610E /* Palette.swift */; };
 		E0B2DD6E2BA881B40086610E /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD6D2BA881B40086610E /* DesignSystem.swift */; };
 		E0B2DD702BA881DC0086610E /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD6F2BA881DC0086610E /* Layout.swift */; };
+		E0F3DDBC2BA8C38200F47720 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F3DDBB2BA8C38200F47720 /* SwitchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		E0B2DD6B2BA8812F0086610E /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		E0B2DD6D2BA881B40086610E /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		E0B2DD6F2BA881DC0086610E /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		E0F3DDBB2BA8C38200F47720 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			children = (
 				E0B2DD352BA483D40086610E /* RoundedCardView.swift */,
 				E0B2DD5C2BA82B0F0086610E /* ActivityView.swift */,
+				E0F3DDBB2BA8C38200F47720 /* SwitchView.swift */,
 			);
 			path = "General Views";
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				E0B2DD6A2BA880B20086610E /* FontStyle.swift in Sources */,
 				E0B2DD522BA6DBA70086610E /* CompositionRoot.swift in Sources */,
 				E0B2DD3B2BA492EC0086610E /* DetailCardView.swift in Sources */,
+				E0F3DDBC2BA8C38200F47720 /* SwitchView.swift in Sources */,
 				E0B2DD552BA829060086610E /* RestaurantListViewModel.swift in Sources */,
 				E0B2DD092BA47AB40086610E /* SampleApp.swift in Sources */,
 				E0B2DD4B2BA49D3D0086610E /* NetworkDataFetchManager.swift in Sources */,

@@ -34,16 +34,35 @@ struct RestaurantListView: View {
 
     private func loadedListView(list: [FeedRestaurant]) -> some View {
         return NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20, content: {
-                    ForEach(list) { currentItem in
-                        elementView(restaurant: currentItem)
-                    }
-                }).padding()
-            }.navigationTitle("search").navigationBarTitleDisplayMode(.inline)
+            VStack {
+                filterView()
+                ScrollView {
+                    VStack(alignment: .leading, spacing: designSystem.spacing.medium, content: {
+                        ForEach(list) { currentItem in
+                            elementView(restaurant: currentItem)
+                        }
+                    }).padding()
+                }.navigationTitle("search").navigationBarTitleDisplayMode(.inline)
+            }
         }
     }
-
+    
+    private func filterView() -> some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack (alignment: .center, spacing: designSystem.spacing.small, content: {
+                CustomSwitch(title: "Top Rated", action: {
+                        
+                })
+                CustomSwitch(title: "Take Out", action: {
+                        
+                })
+                CustomSwitch(title: "Eat In", action: {
+                        
+                })
+            })
+        }.padding(designSystem.spacing.large)
+    }
+    
     private func elementView(restaurant: FeedRestaurant) -> some View {
         RestaurantCardView(viewModel: restaurant)
     }
@@ -51,7 +70,7 @@ struct RestaurantListView: View {
     private func emptyResultsView() -> some View {
         return NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20, content: {
+                VStack(alignment: .leading, spacing: designSystem.spacing.medium, content: {
                     Text(String(localized: "no results \(query)", comment: "inquiry not found"))
                     Spacer()
                 }).padding()

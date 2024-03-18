@@ -9,8 +9,13 @@ import SwiftUI
 
 struct CustomSwitch: View {
     @State private var isSelected = false
-    @State var title = "Top Rated"
+    private let title: String
+    private let action:() -> Void
     
+    init(title: String, action: @escaping () -> Void) {
+        self.title = title
+        self.action = action
+    }
     var body: some View {
         ZStack {
             Toggle(isOn: $isSelected) {
@@ -19,13 +24,14 @@ struct CustomSwitch: View {
             .tint(designSystem.palette.selected)
             .toggleStyle(.button)
             .clipShape(Ellipse())
-               Text(title)
+            Text(title)
+                .foregroundColor(isSelected ? designSystem.palette.lightText : designSystem.palette.darkText)
            }
        }
 }
 
 struct CustomSwitch_Previews: PreviewProvider {
     static var previews: some View {
-        CustomSwitch()
+        CustomSwitch(title: "Top Rated", action: {})
     }
 }

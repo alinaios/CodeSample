@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RestaurantCardView: View {
+    @State var viewModel: Restaurant
+
     var body: some View {
         RoundedCardView {
             VStack(alignment: .center, spacing: 8, content: {
@@ -23,13 +25,20 @@ struct RestaurantCardView: View {
     
     private var titleView: some View{
         VStack (alignment: .leading, content: {
-            Text("Title")
-            Text("Tag")
+            Text(viewModel.name)
+            HStack {
+                ForEach (viewModel.filterIds, id: \.self) { currentTag in
+                    Text(currentTag.prefix(3))
+                    if (currentTag != viewModel.filterIds.last) {
+                        Text("*")
+                    }
+                }
+            }
             HStack {
             Image(systemName: "clock")
                     .frame(width: 8, height: 8)
                     .foregroundColor(.red)
-            Text("30 mins")
+                Text("\(viewModel.delivery_time_minutes) mins")
            }
         }).padding(8)
     }
@@ -37,13 +46,13 @@ struct RestaurantCardView: View {
     private var starView: some View {
         HStack(alignment: .firstTextBaseline, spacing: 3, content: {
             Image(systemName: "star").foregroundColor(.red)
-            Text("5")
+            Text(String(viewModel.rating))
         })
     }
 }
 
-struct RestaurantCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        RestaurantCardView()
-    }
-}
+//struct RestaurantCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RestaurantCardView(viewModel: RestaurantCardViewModel(service: restaurantService, restaurant: Restaurant))
+//    }
+//}

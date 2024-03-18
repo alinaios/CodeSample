@@ -7,11 +7,10 @@
 
 import Foundation
 
-struct RoutingParameter {
-    let query: String
-}
-extension RoutingParameter: Routing {
+struct RestaurantListParameter {}
+
+extension RestaurantListParameter: Routing {
     var routePath: String {
-        return "api/v1/restaurants"
+        return "api/v1/restaurants/"
     }
 }

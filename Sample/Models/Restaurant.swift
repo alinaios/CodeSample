@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Restaurant {
+struct Restaurant: Identifiable, Decodable {
     let id: String
     let name: String
-    let rating: Int
+    let rating: Double
     let filterIds: [String]
     let image_url: URL
     let delivery_time_minutes: Int

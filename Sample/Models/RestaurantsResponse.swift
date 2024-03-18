@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct RestaurantsResponse {
+struct RestaurantsResponse: Decodable {
     let restaurants: [Restaurant]
 }

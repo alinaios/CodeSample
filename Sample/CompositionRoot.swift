@@ -8,3 +8,6 @@
 import Foundation
 
 let projectBaseURL = "https://food-delivery.umain.io"
+let networkSessionManager = NetworkDataFetchManager()
+let restaurantService = DataFetchManager(with: networkSessionManager)
+let restaurantViewModel = RestaurantListViewModel(service: restaurantService)

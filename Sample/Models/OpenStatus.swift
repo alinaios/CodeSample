@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OpenStatus {
+struct OpenStatus: Decodable {
     let restaurant_id: String
     let is_currently_open: Bool
 }

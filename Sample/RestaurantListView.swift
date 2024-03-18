@@ -32,7 +32,7 @@ struct RestaurantListView: View {
         }
     }
 
-    private func loadedListView(list: [Restaurant]) -> some View {
+    private func loadedListView(list: [FeedRestaurant]) -> some View {
         return NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20, content: {
@@ -45,29 +45,14 @@ struct RestaurantListView: View {
         }
     }
 
-    private func elementView(restaurant: Restaurant) -> some View {
+    private func elementView(restaurant: FeedRestaurant) -> some View {
         RestaurantCardView(viewModel: restaurant)
-//        NavigationLink(destination: RestaurantCardView(viewModel: ShowViewModel(show: show))) {
-//            HStack(spacing: ProjectLayout.indent32, content: {
-//                AsyncImage(url: URL(string: show.show.image?.medium ?? ""))
-//                Text(show.show.name ?? "")
-//            })
-//        }
     }
-
-//    private func searchHeader(query: Binding<String>) -> some View {
-//        VStack(alignment: .leading, spacing: 20, content: {
-//            SearchView(text: query, searchButtonHandler: {
-//                viewModel.send(event: .onAppear(query.wrappedValue))
-//            })
-//        })
-//    }
 
     private func emptyResultsView() -> some View {
         return NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20, content: {
-//                    searchHeader(query: $query)
                     Text(String(localized: "no results \(query)", comment: "inquiry not found"))
                     Spacer()
                 }).padding()

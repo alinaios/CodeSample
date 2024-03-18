@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RestaurantCardView: View {
-    @State var viewModel: Restaurant
+    @State var viewModel: FeedRestaurant
 
     var body: some View {
         RoundedCardView {
@@ -27,9 +27,9 @@ struct RestaurantCardView: View {
         VStack (alignment: .leading, content: {
             Text(viewModel.name)
             HStack {
-                ForEach (viewModel.filterIds, id: \.self) { currentTag in
+                ForEach (viewModel.filters, id: \.self) { currentTag in
                     Text(currentTag.prefix(3))
-                    if (currentTag != viewModel.filterIds.last) {
+                    if (currentTag != viewModel.filters.last) {
                         Text("*")
                     }
                 }
@@ -38,7 +38,7 @@ struct RestaurantCardView: View {
             Image(systemName: "clock")
                     .frame(width: 8, height: 8)
                     .foregroundColor(.red)
-                Text("\(viewModel.delivery_time_minutes) mins")
+                Text("\(viewModel.deliveryTime) mins")
            }
         }).padding(8)
     }
@@ -50,9 +50,3 @@ struct RestaurantCardView: View {
         })
     }
 }
-
-//struct RestaurantCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RestaurantCardView(viewModel: RestaurantCardViewModel(service: restaurantService, restaurant: Restaurant))
-//    }
-//}

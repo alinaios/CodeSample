@@ -50,7 +50,7 @@ extension RestaurantListViewModel {
     // System states
     enum State {
         case loadingList
-        case loadedList([Restaurant])
+        case loadedList([FeedRestaurant])
         case error(Error)
         case empty
     }
@@ -71,7 +71,7 @@ extension RestaurantListViewModel {
             case .onAppear:
                 return state
             case .onDataLoaded(let response):
-                return response.restaurants.isEmpty ? .empty : .loadedList(response.restaurants)
+                return response.restaurants.isEmpty ? .empty : .loadedList(response.restaurants.map { $0.item })
             case .onFailedToLoadData(let error):
                 return .error(error)
             }

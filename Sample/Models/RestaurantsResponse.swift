@@ -8,5 +8,5 @@
 import Foundation
 
 struct RestaurantsResponse: Decodable {
-    let restaurants: [Restaurant]
+    let restaurants: [APIRestaurant]
 }

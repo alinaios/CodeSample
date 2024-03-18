@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct RoundedCardView<Content: View>: View {
      var content: Content
 

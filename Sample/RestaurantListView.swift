@@ -51,13 +51,10 @@ struct RestaurantListView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack (alignment: .center, spacing: designSystem.spacing.small, content: {
                 CustomSwitch(title: "Top Rated", action: {
-                        
+                    viewModel.send(event: .onAppear("Top Rated"))
                 })
                 CustomSwitch(title: "Take Out", action: {
-                        
-                })
-                CustomSwitch(title: "Eat In", action: {
-                        
+                    viewModel.send(event: .onAppear("Take Out"))
                 })
             })
         }.padding(designSystem.spacing.large)

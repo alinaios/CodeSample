@@ -18,13 +18,13 @@ final class RestaurantListViewModel: ObservableObject {
         self.service = service
     }
 
-    private func fetch(service: DataFetchManager, query: String) {
+    private func fetch(service: DataFetchManager) {
         Publishers.system(
             initial: state,
             reduce: Self.reduce,
             scheduler: RunLoop.main,
             feedbacks: [
-                Self.whenLoading(service: service, query: query),
+                Self.whenLoading(service: service),
                 Self.userInput(input: input.eraseToAnyPublisher())
             ]
         )
@@ -38,9 +38,10 @@ final class RestaurantListViewModel: ObservableObject {
 
     func send(event: Event) {
         switch event {
-        case .onAppear(let query):
+        case .onAppear(_):
             state = State.loadingList
-            fetch(service: self.service, query: query)
+            fetch(service: self.service)
+
         default:
             break
         }
@@ -80,7 +81,7 @@ extension RestaurantListViewModel {
         }
     }
 
-    static func whenLoading(service: DataFetchManager, query: String) -> Feedback<State, Event> {
+    static func whenLoading(service: DataFetchManager) -> Feedback<State, Event> {
         Feedback {(state: State) -> AnyPublisher<Event, Never> in
             switch state {
             case .loadingList:
@@ -99,4 +100,3 @@ extension RestaurantListViewModel {
         Feedback { _ in input }
     }
 }
-

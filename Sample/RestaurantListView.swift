@@ -36,7 +36,6 @@ struct RestaurantListView: View {
         return NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20, content: {
-//                    searchHeader(query: $query)
                     ForEach(list) { currentItem in
                         elementView(restaurant: currentItem)
                     }

@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct RestaurantsResponse: Decodable {
+    let restaurants: [APIRestaurant]
+}
+
 struct APIRestaurant: Identifiable, Decodable {
     let id: String
     let name: String

@@ -12,8 +12,9 @@ struct RestaurantCardView: View {
 
     var body: some View {
         RoundedCardView {
+            VStack(alignment: .center, content: {
+            imageView(imageURL: viewModel.imageURL)
             VStack(alignment: .leading, content: {
-                imageView
                 HStack(alignment: .firstTextBaseline, content: {
                     infoView
                     Spacer()
@@ -22,11 +23,22 @@ struct RestaurantCardView: View {
                 tagListView
                 deliveryTimeView
             }).padding(designSystem.spacing.small)
-        }
+        })
+    }
     }
     
-    private var imageView: some View{
-        Image("Image").background(.red)
+    private func imageView(imageURL: URL) -> some View{
+        AsyncImage(url: imageURL) { phase in
+            switch phase {
+            case .success(let image):
+                image.resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, maxHeight: 139)
+                    .cornerRadius(12, corners: [.topLeft, .topRight])
+            default:
+                Image(.image)
+            }
+        }
     }
     
     private var infoView: some View{
@@ -92,5 +104,33 @@ struct RestaurantCardView_Previews: PreviewProvider {
                                        imageURL: URL(string: "Top")!,
                                        deliveryTime: "30")
         RestaurantCardView(viewModel: viewModel)
+    }
+}
+
+
+struct CornerRadiusStyle: ViewModifier {
+    var radius: CGFloat
+    var corners: UIRectCorner
+    
+    struct CornerRadiusShape: Shape {
+
+        var radius = CGFloat.infinity
+        var corners = UIRectCorner.allCorners
+
+        func path(in rect: CGRect) -> Path {
+            let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+            return Path(path.cgPath)
+        }
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .clipShape(CornerRadiusShape(radius: radius, corners: corners))
+    }
+}
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        ModifiedContent(content: self, modifier: CornerRadiusStyle(radius: radius, corners: corners))
     }
 }

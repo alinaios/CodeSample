@@ -16,14 +16,12 @@ struct RoundedCardView<Content: View>: View {
 
      var body: some View {
          VStack(alignment: .leading, spacing: 0) {
-             RoundedRectangle(cornerRadius: 12)
+             RoundedRectangle(cornerRadius: 0)
                  .fill(.white)
                  .frame(height: 220)
-                 .shadow(color: Color.black.opacity(0.1),
-                         radius: 12,
-                         x: 0,
-                         y: 4)
+                 .cornerRadius(12, corners: [.topLeft, .topRight])
                  .overlay(content)
+                 .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 4)
          }
      }
  }

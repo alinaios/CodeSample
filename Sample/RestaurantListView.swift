@@ -12,6 +12,8 @@ struct RestaurantListView: View {
     @State private var isShowingDetailView = false
     @State private var isLoading = true
     @State private var query: String = ""
+    @State private var topRatedSelected: Bool = false
+    @State private var inOutSelected: Bool = false
 
     var body: some View {
         content.onAppear {
@@ -51,17 +53,17 @@ struct RestaurantListView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack (alignment: .center, spacing: designSystem.spacing.small, content: {
                 Spacer()
-                FilterButton(title: "Top Rated", image: Image(.topRated), action: {
+                FilterButton(isSelected: $topRatedSelected, title: "Top Rated", image: Image(.topRated), action: {
                     viewModel.send(event: .onAppear("Top Rated"))
                     print("Top Rated")
                 })
                 Spacer()
-                FilterButton(title: "Take Out", image: Image(.takeIn), action: {
+                FilterButton(isSelected: $inOutSelected, title: "Take Out", image: Image(.takeIn), action: {
                     viewModel.send(event: .onAppear("Take Out"))
                     print("Take Out")
                 })
             })
-        }.padding(designSystem.spacing.small)
+        }.padding(designSystem.spacing.large)
     }
     
     private func elementView(restaurant: FeedRestaurant) -> some View {

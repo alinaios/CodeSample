@@ -19,7 +19,7 @@ protocol FontStyleProtocol {
 struct ClassicFont: FontStyleProtocol {
     var title1: Font = Font.custom("Helvetica", size: 18)
     
-    var title2: Font = Font.custom("Helvetica", size: 14)
+    var title2: Font = Font.custom("Poppins-Medium", size: 14)
     
     var subtitle1: Font = Font.custom("Helvetica", size: 12).bold()
     

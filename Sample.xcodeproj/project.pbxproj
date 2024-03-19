@@ -29,7 +29,6 @@
 		E0B2DD552BA829060086610E /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD542BA829060086610E /* RestaurantListViewModel.swift */; };
 		E0B2DD582BA829F40086610E /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD572BA829F40086610E /* Feedback.swift */; };
 		E0B2DD5A2BA82A1A0086610E /* Publishers+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD592BA82A1A0086610E /* Publishers+Ext.swift */; };
-		E0B2DD5D2BA82B0F0086610E /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD5C2BA82B0F0086610E /* ActivityView.swift */; };
 		E0B2DD5F2BA838C10086610E /* OpenStatusParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD5E2BA838C10086610E /* OpenStatusParameter.swift */; };
 		E0B2DD632BA83A6C0086610E /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD622BA83A6C0086610E /* Filter.swift */; };
 		E0B2DD652BA83A9B0086610E /* FilterParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD642BA83A9B0086610E /* FilterParameter.swift */; };
@@ -86,7 +85,6 @@
 		E0B2DD542BA829060086610E /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
 		E0B2DD572BA829F40086610E /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		E0B2DD592BA82A1A0086610E /* Publishers+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+Ext.swift"; sourceTree = "<group>"; };
-		E0B2DD5C2BA82B0F0086610E /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		E0B2DD5E2BA838C10086610E /* OpenStatusParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenStatusParameter.swift; sourceTree = "<group>"; };
 		E0B2DD622BA83A6C0086610E /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		E0B2DD642BA83A9B0086610E /* FilterParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterParameter.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			children = (
 				E0F3DDBF2BA9992A00F47720 /* CornerRadiusStyle.swift */,
 				E0B2DD352BA483D40086610E /* RoundedCardView.swift */,
-				E0B2DD5C2BA82B0F0086610E /* ActivityView.swift */,
 				E0F3DDBB2BA8C38200F47720 /* SwitchView.swift */,
 			);
 			path = General;
@@ -414,7 +411,6 @@
 				E0B2DD492BA49C7A0086610E /* Routing.swift in Sources */,
 				E0B2DD632BA83A6C0086610E /* Filter.swift in Sources */,
 				E0B2DD5F2BA838C10086610E /* OpenStatusParameter.swift in Sources */,
-				E0B2DD5D2BA82B0F0086610E /* ActivityView.swift in Sources */,
 				E0B2DD362BA483D40086610E /* RoundedCardView.swift in Sources */,
 				E0B2DD6E2BA881B40086610E /* DesignSystem.swift in Sources */,
 				E0B2DD5A2BA82A1A0086610E /* Publishers+Ext.swift in Sources */,

@@ -22,7 +22,7 @@ struct RestaurantListView: View {
     private var content: some View {
         switch viewModel.state {
         case .loadingList:
-            return ActivityView(isAnimating: $isLoading).eraseToAnyView()
+            return ProgressView().eraseToAnyView()
         case .loadedList(let list):
             return loadedListView(list: list).eraseToAnyView()
         case .error(let error):

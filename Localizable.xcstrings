@@ -29,22 +29,16 @@
     "30" : {
 
     },
-    "default placeholder" : {
-      "comment" : "search"
-    },
     "Glasses" : {
 
     },
-    "no results %@" : {
-      "comment" : "inquiry not found"
+    "no results" : {
+
     },
     "Retry" : {
 
     },
     "Sample" : {
-
-    },
-    "search" : {
 
     },
     "Status" : {

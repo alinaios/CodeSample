@@ -11,7 +11,7 @@ struct RestaurantListView: View {
     @ObservedObject var viewModel: RestaurantListViewModel
     @State private var isShowingDetailView = false
     @State private var isLoading = true
-    @State private var query: String = String(localized: "default placeholder", comment: "search")
+    @State private var query: String = ""
 
     var body: some View {
         content.onAppear {
@@ -42,7 +42,7 @@ struct RestaurantListView: View {
                             elementView(restaurant: currentItem)
                         }
                     }).padding()
-                }.navigationTitle("search").navigationBarTitleDisplayMode(.inline)
+                }
             }
         }
     }
@@ -50,14 +50,17 @@ struct RestaurantListView: View {
     private func filterView() -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack (alignment: .center, spacing: designSystem.spacing.small, content: {
-                CustomSwitch(title: "Top Rated", action: {
+                Spacer()
+                FilterButton(title: "Top Rated", image: Image(.topRated), action: {
                     viewModel.send(event: .onAppear("Top Rated"))
+                    print("Top Rated")
                 })
-                CustomSwitch(title: "Take Out", action: {
+                FilterButton(title: "Take Out", image: Image(.topRated), action: {
                     viewModel.send(event: .onAppear("Take Out"))
+                    print("Take Out")
                 })
             })
-        }.padding(designSystem.spacing.large)
+        }.padding(designSystem.spacing.small)
     }
     
     private func elementView(restaurant: FeedRestaurant) -> some View {
@@ -65,14 +68,10 @@ struct RestaurantListView: View {
     }
 
     private func emptyResultsView() -> some View {
-        return NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: designSystem.spacing.medium, content: {
-                    Text(String(localized: "no results \(query)", comment: "inquiry not found"))
-                    Spacer()
-                }).padding()
-            }
-        }
+        return VStack(alignment: .leading, spacing: designSystem.spacing.medium, content: {
+            Text("no results")
+            Spacer()
+        })
     }
 
     private func errorView(error: Error) -> some View {

@@ -192,7 +192,7 @@
 		E0B2DD392BA48E990086610E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E0B2DD5B2BA82B020086610E /* General Views */,
+				E0B2DD5B2BA82B020086610E /* General */,
 				E0B2DD4C2BA4A5F20086610E /* RestaurantListView.swift */,
 				E0B2DD332BA47B250086610E /* RestaurantCardView.swift */,
 				E0B2DD3A2BA492EC0086610E /* DetailCardView.swift */,
@@ -249,7 +249,7 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		E0B2DD5B2BA82B020086610E /* General Views */ = {
+		E0B2DD5B2BA82B020086610E /* General */ = {
 			isa = PBXGroup;
 			children = (
 				E0F3DDBF2BA9992A00F47720 /* CornerRadiusStyle.swift */,
@@ -257,7 +257,7 @@
 				E0B2DD5C2BA82B0F0086610E /* ActivityView.swift */,
 				E0F3DDBB2BA8C38200F47720 /* SwitchView.swift */,
 			);
-			path = "General Views";
+			path = General;
 			sourceTree = "<group>";
 		};
 		E0B2DD682BA880070086610E /* DesignSystem */ = {

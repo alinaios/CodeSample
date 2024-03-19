@@ -55,7 +55,8 @@ struct RestaurantListView: View {
                     viewModel.send(event: .onAppear("Top Rated"))
                     print("Top Rated")
                 })
-                FilterButton(title: "Take Out", image: Image(.topRated), action: {
+                Spacer()
+                FilterButton(title: "Take Out", image: Image(.takeIn), action: {
                     viewModel.send(event: .onAppear("Take Out"))
                     print("Take Out")
                 })

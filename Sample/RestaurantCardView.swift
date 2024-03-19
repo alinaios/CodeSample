@@ -13,18 +13,18 @@ struct RestaurantCardView: View {
     var body: some View {
         RoundedCardView {
             VStack(alignment: .center, content: {
-            imageView(imageURL: viewModel.imageURL)
-            VStack(alignment: .leading, content: {
-                HStack(alignment: .firstTextBaseline, content: {
-                    infoView
-                    Spacer()
-                    starView
-                })
-                tagListView
-                deliveryTimeView
-            }).padding(designSystem.spacing.small)
-        })
-    }
+                imageView(imageURL: viewModel.imageURL)
+                VStack(alignment: .leading, content: {
+                    HStack(alignment: .firstTextBaseline, content: {
+                        infoView
+                        Spacer()
+                        starView
+                    })
+                    tagListView
+                    deliveryTimeView
+                }).padding(designSystem.spacing.small)
+            })
+        }
     }
     
     private func imageView(imageURL: URL) -> some View{
@@ -69,7 +69,7 @@ struct RestaurantCardView: View {
             Image(.clockIcon)
                 .frame(width: 5, height: 5)
                 .foregroundColor(.red)
-            Text("\(viewModel.deliveryTime) mins")
+            Text(viewModel.deliveryTime)
                 .font(designSystem.fontguide.footer1)
        })
     }

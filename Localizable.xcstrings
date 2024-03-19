@@ -1,0 +1,61 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "." : {
+
+    },
+    "%lld mins" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld min"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld mins"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "30" : {
+
+    },
+    "default placeholder" : {
+      "comment" : "search"
+    },
+    "Glasses" : {
+
+    },
+    "no results %@" : {
+      "comment" : "inquiry not found"
+    },
+    "Retry" : {
+
+    },
+    "Sample" : {
+
+    },
+    "search" : {
+
+    },
+    "Status" : {
+
+    },
+    "Subtitle" : {
+
+    },
+    "Title" : {
+
+    }
+  },
+  "version" : "1.0"
+}

@@ -38,6 +38,7 @@
 		E0B2DD6E2BA881B40086610E /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD6D2BA881B40086610E /* DesignSystem.swift */; };
 		E0B2DD702BA881DC0086610E /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2DD6F2BA881DC0086610E /* Layout.swift */; };
 		E0F3DDBC2BA8C38200F47720 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F3DDBB2BA8C38200F47720 /* SwitchView.swift */; };
+		E0F3DDC02BA9992A00F47720 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F3DDBF2BA9992A00F47720 /* CornerRadiusStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		E0B2DD6D2BA881B40086610E /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		E0B2DD6F2BA881DC0086610E /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		E0F3DDBB2BA8C38200F47720 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
+		E0F3DDBF2BA9992A00F47720 /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 				E0B2DD352BA483D40086610E /* RoundedCardView.swift */,
 				E0B2DD5C2BA82B0F0086610E /* ActivityView.swift */,
 				E0F3DDBB2BA8C38200F47720 /* SwitchView.swift */,
+				E0F3DDBF2BA9992A00F47720 /* CornerRadiusStyle.swift */,
 			);
 			path = "General Views";
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				E0B2DD3E2BA499110086610E /* Restaurant.swift in Sources */,
 				E0B2DD472BA49C510086610E /* DataFetchManager.swift in Sources */,
 				E0B2DD582BA829F40086610E /* Feedback.swift in Sources */,
+				E0F3DDC02BA9992A00F47720 /* CornerRadiusStyle.swift in Sources */,
 				E0B2DD492BA49C7A0086610E /* Routing.swift in Sources */,
 				E0B2DD632BA83A6C0086610E /* Filter.swift in Sources */,
 				E0B2DD5F2BA838C10086610E /* OpenStatusParameter.swift in Sources */,

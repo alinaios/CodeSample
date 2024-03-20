@@ -13,9 +13,9 @@ struct DetailCardView: View {
     var body: some View {
         ZStack{
             imageView(imageURL: viewModel.imageURL)
-            RoundedCardView(corners: [.allCorners], height: 140) {
+            RoundedCardView(corners: [.allCorners], height: 144) {
                 infoView
-            }.offset(CGSize(width: 0, height: -100))
+            }.offset(CGSize(width: 0, height: -80))
             .padding(designSystem.spacing.medium*2)
         }
     }
@@ -26,13 +26,11 @@ struct DetailCardView: View {
             case .success(let image):
                 image.resizable()
                     .scaledToFill()
-                    .frame(maxWidth: .infinity, maxHeight: 250, alignment: .top)
+                    .frame(maxWidth: .infinity, maxHeight: 250)
                     Spacer()
-
                 default:
                     Image(.image)
-                        .background(.red)
-                        .frame(maxWidth: .infinity, maxHeight: 250, alignment: .top)
+                        .frame(maxWidth: .infinity, maxHeight: 250)
                     Spacer()
                 }
             }
@@ -64,9 +62,7 @@ struct DetailCardView: View {
             }
         })
     }
-    
 }
-
 struct DetailCardView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = FeedRestaurant(id: "123",

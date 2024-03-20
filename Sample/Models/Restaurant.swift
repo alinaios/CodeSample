@@ -35,3 +35,8 @@ public struct FeedRestaurant: Identifiable {
     public let imageURL: URL
     public let deliveryTime: LocalizedStringResource
 }
+extension Array where Element == FeedRestaurant {
+    var uniqueFilters: [String] {
+        Set(flatMap { $0.filters }).sorted()
+    }
+}

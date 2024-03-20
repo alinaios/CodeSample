@@ -14,6 +14,8 @@ final class RestaurantListViewModel: ObservableObject {
     private let input = PassthroughSubject<Event, Never>()
     private var service: DataFetchManager
 
+    private static var currentList: [FeedRestaurant] = []
+    
     init(service: DataFetchManager) {
         self.service = service
     }
@@ -38,9 +40,15 @@ final class RestaurantListViewModel: ObservableObject {
 
     func send(event: Event) {
         switch event {
-        case .onAppear(_):
-            state = State.loadingList
-            fetch(service: self.service)
+        case .onAppear(let query):
+            if query.isEmpty {
+                state = State.loadingList
+                fetch(service: self.service)
+            } else {
+                state = State.loadedList(RestaurantListViewModel.currentList.filter({ feedRestaurant in
+                    return feedRestaurant.filters.contains(query)
+                }))
+            }
 
         default:
             break
@@ -58,7 +66,7 @@ extension RestaurantListViewModel {
 
     // UI events
     enum Event {
-        case onAppear(String)
+        case onAppear([String])
         case onDataLoaded(RestaurantsResponse)
         case onFailedToLoadData(Error)
     }
@@ -72,7 +80,9 @@ extension RestaurantListViewModel {
             case .onAppear:
                 return state
             case .onDataLoaded(let response):
-                return response.restaurants.isEmpty ? .empty : .loadedList(response.restaurants.map { $0.item })
+                let list = response.restaurants.map { $0.item }
+                self.currentList = list
+                return response.restaurants.isEmpty ? .empty : .loadedList(list)
             case .onFailedToLoadData(let error):
                 return .error(error)
             }

@@ -25,7 +25,7 @@ struct FilterButton: View {
             isSelected.toggle()
             action()
         } label: {
-            labelView.shadow(color: Color.black.opacity(0.1), radius: 4, x: 2, y: 0)
+            labelView.shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
         }
     }
     

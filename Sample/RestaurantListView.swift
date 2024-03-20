@@ -11,8 +11,8 @@ struct RestaurantListView: View {
     @ObservedObject var viewModel: RestaurantListViewModel
     @State private var isShowingDetailView = false
     @State private var isLoading = true
-    @State private var query: String = ""
-    @State private var topRatedSelected: Bool = false
+    @State private var query: [String] = []
+    @State private var selectedFilters: [Bool] = Array(repeating: false, count: 3)
     @State private var inOutSelected: Bool = false
 
     var body: some View {
@@ -37,7 +37,7 @@ struct RestaurantListView: View {
     private func loadedListView(list: [FeedRestaurant]) -> some View {
         return NavigationStack {
             VStack {
-                filterView()
+                filterView(filters: Array(list.uniqueFilters[0..<3]))
                 ScrollView {
                     VStack(alignment: .leading, spacing: designSystem.spacing.medium, content: {
                         ForEach(list) { currentItem in
@@ -49,19 +49,25 @@ struct RestaurantListView: View {
         }
     }
     
-    private func filterView() -> some View {
+    private func filterView(filters: [String]) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack (alignment: .center, spacing: designSystem.spacing.small, content: {
                 Spacer()
-                FilterButton(isSelected: $topRatedSelected, title: "Top Rated", image: Image(.topRated), action: {
-                    viewModel.send(event: .onAppear("Top Rated"))
-                    print("Top Rated")
-                })
-                Spacer()
-                FilterButton(isSelected: $inOutSelected, title: "Take Out", image: Image(.takeIn), action: {
-                    viewModel.send(event: .onAppear("Take Out"))
-                    print("Take Out")
-                })
+                ForEach(filters.indices, id: \.self) { index in
+                    let filter = filters[index]
+                    FilterButton(isSelected: $selectedFilters[index],
+                                 title: filter,
+                                 image: Image(.topRated),
+                                 action: {
+                        if selectedFilters[index]  {
+                            query.append(filter)
+                        } else {
+                            query.removeAll(where: { $0 == filter })
+                        }
+                        viewModel.send(event: .onAppear(query))
+                    })
+                    Spacer()
+                }
             })
         }.padding(designSystem.spacing.large)
     }

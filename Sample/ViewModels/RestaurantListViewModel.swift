@@ -10,12 +10,13 @@ import Foundation
 
 final class RestaurantListViewModel: ObservableObject {
     @Published private(set) var state = State.loadingList
+    static var uniqueFilterList: [String] = []
+
     private var bag = Set<AnyCancellable>()
     private let input = PassthroughSubject<Event, Never>()
     private var service: DataFetchManager
-
     private static var currentList: [FeedRestaurant] = []
-    
+
     init(service: DataFetchManager) {
         self.service = service
     }
@@ -81,6 +82,7 @@ extension RestaurantListViewModel {
                 return state
             case .onDataLoaded(let response):
                 let list = response.restaurants.map { $0.item }
+                self.uniqueFilterList = list.uniqueFilters
                 self.currentList = list
                 return response.restaurants.isEmpty ? .empty : .loadedList(list)
             case .onFailedToLoadData(let error):

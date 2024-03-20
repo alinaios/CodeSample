@@ -10,10 +10,8 @@ import SwiftUI
 struct RestaurantListView: View {
     @ObservedObject var viewModel: RestaurantListViewModel
     @State private var isShowingDetailView = false
-    @State private var isLoading = true
     @State private var query: [String] = []
-    @State private var selectedFilters: [Bool] = Array(repeating: false, count: 3)
-    @State private var inOutSelected: Bool = false
+    @State private var selectedFilters: [Bool] = Array(repeating: false, count: 10)
 
     var body: some View {
         content.onAppear {
@@ -37,7 +35,7 @@ struct RestaurantListView: View {
     private func loadedListView(list: [FeedRestaurant]) -> some View {
         return NavigationStack {
             VStack {
-                filterView(filters: Array(list.uniqueFilters[0..<3]))
+                filterView(filters: RestaurantListViewModel.uniqueFilterList)
                 ScrollView {
                     VStack(alignment: .leading, spacing: designSystem.spacing.medium, content: {
                         ForEach(list) { currentItem in

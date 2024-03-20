@@ -11,7 +11,7 @@ struct RestaurantCardView: View {
     @State var viewModel: FeedRestaurant
 
     var body: some View {
-        RoundedCardView {
+        RoundedCardView(corners: [.topLeft, .topRight]) {
             VStack(alignment: .center, content: {
                 imageView(imageURL: viewModel.imageURL)
                 VStack(alignment: .leading, content: {
@@ -71,6 +71,7 @@ struct RestaurantCardView: View {
                 .foregroundColor(.red)
             Text(viewModel.deliveryTime)
                 .font(designSystem.fontguide.footer1)
+                .foregroundColor(designSystem.palette.darkText)
        })
     }
     
@@ -102,7 +103,7 @@ struct RestaurantCardView_Previews: PreviewProvider {
                                        rating: "5",
                                        filters: ["Tag", "Tag"],
                                        imageURL: URL(string: "Top")!,
-                                       deliveryTime: "30")
+                                       deliveryTime: "30 min")
         RestaurantCardView(viewModel: viewModel)
     }
 }

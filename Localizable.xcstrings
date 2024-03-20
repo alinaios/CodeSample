@@ -29,7 +29,7 @@
         }
       }
     },
-    "30" : {
+    "30 min" : {
 
     },
     "Failed to load data. Tap 'Retry' to try again." : {
@@ -39,12 +39,6 @@
 
     },
     "Retry" : {
-
-    },
-    "Status" : {
-
-    },
-    "Subtitle" : {
 
     },
     "Title" : {

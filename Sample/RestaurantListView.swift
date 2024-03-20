@@ -69,11 +69,15 @@ struct RestaurantListView: View {
     }
     
     private func elementView(restaurant: FeedRestaurant) -> some View {
-        RestaurantCardView(viewModel: restaurant)
+        NavigationLink {
+            DetailCardView(viewModel: restaurant)
+        } label: {
+            RestaurantCardView(viewModel: restaurant)
+        }
     }
 
     private func emptyResultsView() -> some View {
-        return RoundedCardView {
+        return RoundedCardView(corners: [.allCorners]) {
             Text("No items to display" )
                 .font(designSystem.fontguide.title2)
                 .foregroundColor(designSystem.palette.darkText)

@@ -90,7 +90,7 @@ struct RestaurantCardView: View {
             Image(systemName: "star.fill")
                 .frame(width: 12, height: 12)
                 .foregroundColor(designSystem.palette.selected)
-            Text(String(viewModel.rating))
+            Text(viewModel.rating)
                 .font(designSystem.fontguide.title2)
         })
     }
@@ -103,7 +103,8 @@ struct RestaurantCardView_Previews: PreviewProvider {
                                        rating: "5",
                                        filters: ["Tag", "Tag"],
                                        imageURL: URL(string: "Top")!,
-                                       deliveryTime: "30 min")
+                                       deliveryTime: "30 min", 
+                                       isOpen: true)
         RestaurantCardView(viewModel: viewModel)
     }
 }

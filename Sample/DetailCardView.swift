@@ -13,7 +13,7 @@ struct DetailCardView: View {
     var body: some View {
         ZStack{
             imageView(imageURL: viewModel.imageURL)
-            RoundedCardView(corners: [.allCorners], height: 144) {
+            RoundedCardView(corners: [.allCorners], height: 164) {
                 infoView
             }.offset(CGSize(width: 0, height: -80))
             .padding(designSystem.spacing.medium*2)
@@ -37,7 +37,7 @@ struct DetailCardView: View {
     }
     
     private var infoView: some View{
-        VStack (alignment: .leading, spacing: designSystem.spacing.small, content: {
+        VStack (alignment: .leading, spacing: designSystem.spacing.large, content: {
             HStack{
                 Text(viewModel.name)
                     .font(designSystem.fontguide.headline1)
@@ -45,6 +45,9 @@ struct DetailCardView: View {
                 Spacer()
             }
             tagListView
+            Text(viewModel.isOpen ? "Open" : "Closed")
+                .font(designSystem.fontguide.headline1)
+                .foregroundColor(viewModel.isOpen ? designSystem.palette.positive : designSystem.palette.negative)
         }).padding(designSystem.spacing.medium)
     }
     
@@ -70,7 +73,8 @@ struct DetailCardView_Previews: PreviewProvider {
                                        rating: "5",
                                        filters: ["Tag", "Tag"],
                                        imageURL: URL(string: "Top")!,
-                                       deliveryTime: "30 min")
+                                       deliveryTime: "30 min", 
+                                       isOpen: true)
         DetailCardView(viewModel: viewModel)
     }
 }

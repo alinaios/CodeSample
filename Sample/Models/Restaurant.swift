@@ -23,7 +23,8 @@ struct APIRestaurant: Identifiable, Decodable {
         return FeedRestaurant(id: id, name: name, rating: String(rating),
                               filters: filterIds.map{String($0.prefix(3))},
                               imageURL: image_url,
-                              deliveryTime: LocalizedStringResource("\(delivery_time_minutes) mins"))
+                              deliveryTime: LocalizedStringResource("\(delivery_time_minutes) mins"), 
+                              isOpen: true)
     }
 }
 
@@ -34,6 +35,7 @@ public struct FeedRestaurant: Identifiable {
     public let filters: [String]
     public let imageURL: URL
     public let deliveryTime: LocalizedStringResource
+    public let isOpen: Bool
 }
 extension Array where Element == FeedRestaurant {
     var uniqueFilters: [String] {

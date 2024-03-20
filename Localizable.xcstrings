@@ -32,10 +32,16 @@
     "30 min" : {
 
     },
+    "Closed" : {
+
+    },
     "Failed to load data. Tap 'Retry' to try again." : {
 
     },
     "No items to display" : {
+
+    },
+    "Open" : {
 
     },
     "Retry" : {

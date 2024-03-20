@@ -29,10 +29,7 @@ struct RoundedCardView<Content: View>: View {
  struct RoundedCardView_Previews: PreviewProvider {
      static var previews: some View {
          RoundedCardView {
-             Text("Glasses")
+             Text("No items to display" )
          }.preferredColorScheme(.light)
-         RoundedCardView {
-             Text("Sample")
-         }.preferredColorScheme(.dark)
      }
  }

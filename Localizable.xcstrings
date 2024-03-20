@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "." : {
 
     },
@@ -29,16 +32,13 @@
     "30" : {
 
     },
-    "Glasses" : {
+    "Failed to load data. Tap 'Retry' to try again." : {
 
     },
-    "no results" : {
+    "No items to display" : {
 
     },
     "Retry" : {
-
-    },
-    "Sample" : {
 
     },
     "Status" : {

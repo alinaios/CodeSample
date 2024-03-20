@@ -75,16 +75,24 @@ struct RestaurantListView: View {
     }
 
     private func emptyResultsView() -> some View {
-        return VStack(alignment: .leading, spacing: designSystem.spacing.medium, content: {
-            Text("no results")
-            Spacer()
-        })
+        return RoundedCardView {
+            Text("No items to display" )
+                .font(designSystem.fontguide.title2)
+                .foregroundColor(designSystem.palette.darkText)
+        }.padding()
     }
 
     private func errorView(error: Error) -> some View {
-        return Button("Retry") {
-            viewModel.send(event: .onAppear(query))
-        }
+        return VStack(alignment: .center, spacing: designSystem.spacing.medium, content: {
+            Text("Failed to load data. Tap 'Retry' to try again." )
+                .font(designSystem.fontguide.title2)
+                .foregroundColor(designSystem.palette.darkText)
+            Button("Retry") {
+                viewModel.send(event: .onAppear(query))
+            }
+            .font(designSystem.fontguide.title2)
+            .foregroundColor(designSystem.palette.positive)
+        }).padding()
     }
 }
 

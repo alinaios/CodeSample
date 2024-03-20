@@ -25,7 +25,7 @@ struct FilterButton: View {
             isSelected.toggle()
             action()
         } label: {
-            labelView.shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+            labelView.shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 4)
         }
     }
     
@@ -33,12 +33,12 @@ struct FilterButton: View {
         ZStack {
             RoundedRectangle(cornerRadius: 24)
                 .fill(isSelected ? designSystem.palette.selected : .white)
-                .frame(width: 144, height: 49)
+                .frame(width: 144, height: 48)
             Text(title)
                 .font(designSystem.fontguide.title2)
                 .foregroundColor(isSelected ? designSystem.palette.lightText : designSystem.palette.darkText)
-                .offset(CGSize(width: 10.0, height: 0))
-            image.offset(CGSize(width: -55.0, height: 0))
+                .offset(CGSize(width: 20.0, height: 0))
+            image.offset(CGSize(width: -48.0, height: 0))
         }
     }
 }
@@ -47,7 +47,6 @@ struct FilterButton_Previews: PreviewProvider {
     @State private static var isSelected = false
     static var previews: some View {
         FilterButton(isSelected: $isSelected, title: "Top Rated", image: Image(.topRated), action: {
-            print("Top Rated")
         })
     }
 }

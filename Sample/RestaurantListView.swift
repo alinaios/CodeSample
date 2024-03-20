@@ -50,7 +50,6 @@ struct RestaurantListView: View {
     private func filterView(filters: [String]) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack (alignment: .center, spacing: designSystem.spacing.small, content: {
-                Spacer()
                 ForEach(filters.indices, id: \.self) { index in
                     let filter = filters[index]
                     FilterButton(isSelected: $selectedFilters[index],
@@ -64,10 +63,9 @@ struct RestaurantListView: View {
                         }
                         viewModel.send(event: .onAppear(query))
                     })
-                    Spacer()
                 }
-            })
-        }.padding(designSystem.spacing.large)
+            }).padding(designSystem.spacing.large)
+        }
     }
     
     private func elementView(restaurant: FeedRestaurant) -> some View {
@@ -93,11 +91,5 @@ struct RestaurantListView: View {
             .font(designSystem.fontguide.title2)
             .foregroundColor(designSystem.palette.positive)
         }).padding()
-    }
-}
-
-struct RestaurantListView_Previews: PreviewProvider {
-    static var previews: some View {
-        RestaurantListView(viewModel: RestaurantListViewModel(service: restaurantService))
     }
 }

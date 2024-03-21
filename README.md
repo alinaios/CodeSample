@@ -16,8 +16,11 @@ What is left
     1. Networking layer: 
         1. API calls to fetch filter names for each filter id
         2. API call for open status
-2. Screenshot tests, Unit tests, etc.
+    2. Screenshot tests, Unit tests, etc.
 
 What is implemented in video:
 
 ```
+
+https://github.com/alinaios/CodeSample/assets/85871814/eea8af3c-a06e-41b8-94ba-8c312b9ce1e0
+

@@ -217,10 +217,8 @@
 		E0B2DD452BA49BE20086610E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E0F3DDCB2BAB530E00F47720 /* General */,
 				E0B2DD4E2BA6DB220086610E /* RestaurantService */,
-				E0B2DD462BA49C510086610E /* DataFetchManager.swift */,
-				E0B2DD4A2BA49D3D0086610E /* NetworkDataFetchManager.swift */,
-				E0B2DD482BA49C7A0086610E /* Routing.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -281,6 +279,16 @@
 				E0F3DDC42BA9C8CD00F47720 /* Poppins-Medium.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E0F3DDCB2BAB530E00F47720 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2DD462BA49C510086610E /* DataFetchManager.swift */,
+				E0B2DD4A2BA49D3D0086610E /* NetworkDataFetchManager.swift */,
+				E0B2DD482BA49C7A0086610E /* Routing.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

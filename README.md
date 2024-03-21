@@ -5,7 +5,10 @@ Implementation of https://github.com/apegroup/Code-test?tab=readme-ov-file
 ```
 Used
     1. SwiftUI + Combine
-    2. Since sample accessing colors and images from asset catalog via static properties, Xcode Version 15.3 needed to run the project.
+    2. Since sample accessing colors and images from asset catalog via static properties,
+Xcode Version 15.3 needed to run the project.
+
+
 Assumptions
     1. Number of filters is dynamic: unique set of all filters is shown
     2. No use of thirdparty libraries

@@ -46,7 +46,7 @@ struct DetailCardView: View {
             }
             tagListView
             Text(viewModel.isOpen ? "Open" : "Closed")
-                .font(designSystem.fontguide.headline1)
+                .font(designSystem.fontguide.title1)
                 .foregroundColor(viewModel.isOpen ? designSystem.palette.positive : designSystem.palette.negative)
         }).padding(designSystem.spacing.medium)
     }
@@ -54,10 +54,10 @@ struct DetailCardView: View {
     private var tagListView: some View {
         HStack(spacing: 1, content: {
             ForEach (viewModel.filters, id: \.self) { currentTag in
-                Text(currentTag.prefix(3))
+                Text(currentTag)
                     .font(designSystem.fontguide.title1)
                     .foregroundColor(designSystem.palette.subtitle)
-                if (currentTag != viewModel.filters.last) {
+                if currentTag != viewModel.filters.last {
                     Text(".")
                         .font(designSystem.fontguide.subtitle1)
                         .foregroundColor(designSystem.palette.subtitle)

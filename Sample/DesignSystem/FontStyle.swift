@@ -27,5 +27,5 @@ struct ClassicFont: FontStyleProtocol {
     
     var headline1: Font = Font.custom("Helvetica", size: 24)
     
-    var headline2: Font = Font.custom("Helvetica", size: 24)
+    var headline2: Font = Font.custom("Helvetica", size: 16)
 }

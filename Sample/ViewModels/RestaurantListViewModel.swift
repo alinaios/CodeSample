@@ -46,9 +46,12 @@ final class RestaurantListViewModel: ObservableObject {
                 state = State.loadingList
                 fetch(service: self.service)
             } else {
-                state = State.loadedList(RestaurantListViewModel.currentList.filter({ feedRestaurant in
-                    return feedRestaurant.filters.contains(query)
-                }))
+                let filteredRestaurants = RestaurantListViewModel.currentList.filter { restaurant in
+                    query.contains { queryFilter in
+                        restaurant.filters.contains(queryFilter)
+                    }
+                }
+                state = State.loadedList(filteredRestaurants)
             }
 
         default:

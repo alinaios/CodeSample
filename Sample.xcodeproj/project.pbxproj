@@ -40,6 +40,7 @@
 		E0F3DDC02BA9992A00F47720 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F3DDBF2BA9992A00F47720 /* CornerRadiusStyle.swift */; };
 		E0F3DDC22BA99D5100F47720 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E0F3DDC12BA99D5100F47720 /* Localizable.xcstrings */; };
 		E0F3DDC92BA9CD1800F47720 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0F3DDC42BA9C8CD00F47720 /* Poppins-Medium.ttf */; };
+		E0F3DDCD2BACBB2100F47720 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E0F3DDCC2BACBB2100F47720 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		E0F3DDC42BA9C8CD00F47720 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		E0F3DDC72BA9CC1500F47720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E0F3DDCA2BA9CDA500F47720 /* Inter.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inter.ttc; sourceTree = "<group>"; };
+		E0F3DDCC2BACBB2100F47720 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		E0B2DCFC2BA47AB40086610E = {
 			isa = PBXGroup;
 			children = (
+				E0F3DDCC2BACBB2100F47720 /* README.md */,
 				E0F3DDC12BA99D5100F47720 /* Localizable.xcstrings */,
 				E0B2DD072BA47AB40086610E /* Sample */,
 				E0B2DD192BA47AB50086610E /* SampleTests */,
@@ -397,6 +400,7 @@
 			files = (
 				E0F3DDC92BA9CD1800F47720 /* Poppins-Medium.ttf in Resources */,
 				E0B2DD112BA47AB50086610E /* Preview Assets.xcassets in Resources */,
+				E0F3DDCD2BACBB2100F47720 /* README.md in Resources */,
 				E0B2DD0D2BA47AB50086610E /* Assets.xcassets in Resources */,
 				E0F3DDC22BA99D5100F47720 /* Localizable.xcstrings in Resources */,
 			);
